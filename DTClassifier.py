@@ -111,7 +111,7 @@ def main():
     create_treecars_csv(features_test, classes_test,
                         classes_predicted, accuracy)
 
-    print(f"Accuracy on testing set: {accuracy:.4f}")
+    # Print success message
     print("TreeCars.png and TreeCars.csv have been created.")
 
 # --------------------------------------------------------------------------------------------------
