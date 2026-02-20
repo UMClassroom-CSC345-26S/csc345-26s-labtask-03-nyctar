@@ -95,7 +95,7 @@ def main():
     random_state = 2
 
     # Load dataset (replace with your actual filename)
-    dataset, features, classes = get_data("/content/drive/MyDrive/AllCars.csv")
+    dataset, features, classes = get_data("AllCars.csv")
 
     # Normalize data
     scaler = StandardScaler()
@@ -110,6 +110,9 @@ def main():
     # Create required CSV files
     create_cluster_cars_csv(dataset, labels, cluster_styles)
     create_cluster_accuracy_csv(cluster_accuracy_data)
+
+    # Print success message
+    print("Clustering completed. ClusterCars.csv and ClusterAccuracy.csv have been created.")
 
 # --------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
