@@ -10,7 +10,6 @@ def get_data(file_name):
 
     dataset = pd.read_csv(file_name)
 
-    # Extract columns Volume and Doors for analysis
     features = dataset[["Volume", "Doors"]].values
     classes = dataset["Style"].values
 
@@ -112,7 +111,7 @@ def main():
     create_cluster_accuracy_csv(cluster_accuracy_data)
 
     # Print success message
-    print("Clustering completed. ClusterCars.csv and ClusterAccuracy.csv have been created.")
+    print("ClusterCars.csv and ClusterAccuracy.csv have been created.")
 
 # --------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
