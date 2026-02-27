@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
+# --------------------------------------------------------------------------------------------------
 def get_data(file_name):
     """
     Load dataset and return features and class labels.
@@ -14,7 +15,6 @@ def get_data(file_name):
     classes = dataset["Style"].values
 
     return dataset, features, classes
-
 
 # --------------------------------------------------------------------------------------------------
 
@@ -30,7 +30,6 @@ def do_cluster(K, features, random_state):
     centers = model.cluster_centers_
 
     return model, labels, centers
-
 
 # --------------------------------------------------------------------------------------------------
 def compute_cluster_info(K, labels, classes):
@@ -64,7 +63,6 @@ def compute_cluster_info(K, labels, classes):
 
     return cluster_styles, cluster_accuracy_data
 
-
 # --------------------------------------------------------------------------------------------------
 def create_cluster_cars_csv(dataset, labels, cluster_styles):
     """
@@ -77,7 +75,6 @@ def create_cluster_cars_csv(dataset, labels, cluster_styles):
     dataset[["Volume", "Doors", "Style", "ClusterStyle"]].to_csv(
         "ClusterCars.csv", index=False
     )
-
 
 # --------------------------------------------------------------------------------------------------
 def create_cluster_accuracy_csv(cluster_accuracy_data):
